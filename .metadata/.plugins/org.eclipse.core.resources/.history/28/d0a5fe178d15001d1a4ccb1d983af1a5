@@ -1,0 +1,7 @@
+package entity;
+
+import org.hibernate.boot.registry.selector.spi.StrategyCreator;
+
+public class cadastro implements StrategyCreator<T> {
+
+}
