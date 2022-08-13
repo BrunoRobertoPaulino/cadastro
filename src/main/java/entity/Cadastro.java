@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.modelmapper.ModelMapper;
 
@@ -19,6 +20,7 @@ public class Cadastro implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@Transient
 	private static ModelMapper modelMapper = new ModelMapper();
 
 	@Id
@@ -75,9 +77,14 @@ public class Cadastro implements Serializable {
 		Cadastro other = (Cadastro) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 	public CadastroDTO toDto() {
 		return modelMapper.map(this, CadastroDTO.class);
+	}
+
+	@Override
+	public String toString() {
+		return "Cadastro [id=" + id + ", nome=" + nome + ", sobreNome=" + sobreNome + ", cpf=" + cpf + "]";
 	}
 
 }
