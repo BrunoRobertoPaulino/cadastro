@@ -1,3 +1,3 @@
 # cadastro
 
-COMI O CU DO MINEIRO
+TE AMO BRUNO
